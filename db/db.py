@@ -4,13 +4,16 @@ import sqlite3
 
 # test
 
+from models import Holiday
 
 class Database:
-    def __init__(self):
+    def __enter__(self):
         self.__conn = sqlite3.connect("./db/holidays.db")
         self.__cursor = self.__conn.cursor()
+        return self
 
-    def close(self):
+    def __exit__(self, *args):
+        
         self.__conn.close()
     
     def add_new_customer(self, forename: str, surname: str, telephone: str):
@@ -22,13 +25,14 @@ class Database:
         records = self.__cursor.execute("SELECT * FROM Customer").fetchall()
         return records
     
-    def get_holidays(self, location: str) -> Tuple[Tuple]:
+    def get_holidays(self, location: str) -> Tuple[Holiday]:
         records = self.__cursor.execute("SELECT * FROM Holiday WHERE Location = ?", (location,)).fetchall()
-        return records
+
+        return [Holiday(*record) for record in records]
+
+        #return records # at the mo this is a tuple of tuples
     
-
-
-db = Database()
+    
 
 if __name__ == "__main__":
     # tests

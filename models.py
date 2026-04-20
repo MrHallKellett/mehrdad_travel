@@ -2,11 +2,13 @@ from datetime import date, datetime
 from dataclasses import dataclass
 
 @dataclass
-class Holiday:
-    duration: int
+class Holiday:  # make sure this matches the database
     id: str
     location: str
     departure_date: date
+    duration: int
+    outbound_plane_id: str
+    return_plane_id: str
     
 @dataclass
 class Customer:
