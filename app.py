@@ -1,14 +1,11 @@
 from db.db import Database
 from flask import Flask, render_template, make_response, request
 
-
-
 app = Flask(__name__)
 print("Hello")
 @app.route("/")
 def index():
     return render_template("index.html")
-
 
 # how to do query parameters in Flask
 
