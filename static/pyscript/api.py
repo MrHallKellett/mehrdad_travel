@@ -1,6 +1,8 @@
 from pyodide.http import pyfetch
 
 
+async def post_request_booking(booking):
+    pass
 
 async def get_request_holidays(location):
 

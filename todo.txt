@@ -1,4 +1,5 @@
-1. install flask - pip install flask
-2. app.py - run a web server that serves index.html
-3. db.py - create a database driver to run SQL queries
-4. api.py - 
+1. update models.py - should match the database!
+2. finish create_booking
+3. finish post_request_booking
+4. click_add_another_guest
+5. 

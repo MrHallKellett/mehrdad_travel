@@ -4,7 +4,7 @@ import sqlite3
 
 # test
 
-from static.models import Holiday
+from models import Holiday
 
 class Database:
     def __enter__(self):
