@@ -7,7 +7,20 @@ print("Hello")
 def index():
     return render_template("index.html")
 
-# how to do query parameters in Flask
+###########################################
+
+@app.route("/api/bookings/new", methods=["POST"])
+def add_new_booking():
+
+    print("We managed to get pyscript to send a POST request")
+
+    new_booking = request.json
+
+    print(new_booking)
+
+    return make_response({"status":"Booking successful."}, 200)
+
+###########################################
 
 @app.route("/api/holidays", methods=["GET"])
 def serve_holidays():
