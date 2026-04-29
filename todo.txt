@@ -1,5 +1,6 @@
-1. update models.py - should match the database!
+1. update models.py - should match the database!  X
 2. finish create_booking
 3. finish post_request_booking
 4. click_add_another_guest
-5. 
+5. update create_booking to handle multiple guests
+6. save_for_later
