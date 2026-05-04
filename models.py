@@ -29,9 +29,10 @@ class Customer:
 
 @dataclass
 class Booking:
+    id: str
     customer: Customer
     holiday: Holiday
-    num_guests: int
+    guests: list[Guest]=None
 
 @dataclass
 class Guest:
@@ -39,6 +40,7 @@ class Guest:
     booking: Booking
     name: str
     allergens: list[Allergen]
+    meal: Food
 
 @dataclass
 class Food:

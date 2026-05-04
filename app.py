@@ -18,16 +18,12 @@ def add_new_booking():
 
     print(new_booking)
 
-    # make models out of the data that was received
-
-
-
-    # invalid data 
-        # return ERROR  status code 400
-
-    # valid data
-        # run a database function
-
+    try:
+        with Database() as db:
+            db.process_booking(new_booking)
+    except Exception as e:
+        return make_response({"error":e}, 500)
+    
     return make_response({"status":"Booking successful."}, 200)
 
 ###########################################
